@@ -11,9 +11,8 @@ import { Send } from "lucide-react";
 
 export default function LoginPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <p>Login</p>
-      <Card className="w-[560px]">
+    <div className="m-6">
+      <Card className="w-full">
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
           <CardDescription>Card Description</CardDescription>
