@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,8 +13,8 @@ import { Send } from "lucide-react";
 
 export default function LoginPage() {
   return (
-    <div className="m-6">
-      <Card className="w-full">
+    <div className="flex justify-center items-center p-6 w-full h-screen bg-amber-200">
+      <Card className="w-full md:w-[560px]">
         <CardHeader>
           <CardTitle>LOGIN FORM</CardTitle>
           <CardDescription>Card Description</CardDescription>
@@ -34,8 +36,13 @@ export default function LoginPage() {
           </p>
         </CardContent>
         <CardFooter>
-          <Button className="w-full">
-            <Send /> Mark all as read
+          <Button
+            className="w-full"
+            onClick={() => {
+              window.location.href = "/dashboard";
+            }}
+          >
+            <Send /> LOGIN
           </Button>
         </CardFooter>
       </Card>

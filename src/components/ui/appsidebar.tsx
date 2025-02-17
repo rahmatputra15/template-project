@@ -54,6 +54,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="bg-blue-50">
         <Button
+          className="m-3"
           variant="outline"
           onClick={() => {
             window.location.href = "/";
@@ -61,9 +62,6 @@ export function AppSidebar() {
         >
           Log Out
         </Button>
-        <div className="text-xs text-center mb-5">
-          © {new Date().getFullYear()} Your Company
-        </div>
       </SidebarFooter>
     </Sidebar>
   );
