@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sidebar,
   SidebarContent,
@@ -9,33 +11,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Home, User } from "lucide-react";
+import Link from "next/link";
+import { Button } from "./button";
 
 const items = [
   {
-    title: "Home",
-    url: "#",
+    title: "Dashboard",
+    url: "/dashboard",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "User",
+    url: "/dashboard/user",
+    icon: User,
   },
 ];
 
@@ -43,17 +32,19 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent className="bg-blue-50">
-        <SidebarHeader>App Sidebar</SidebarHeader>
+        <SidebarHeader>
+          <Link href="/dashboard">App Sidebar</Link>
+        </SidebarHeader>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-2">
+                    <Link href={item.url} className="flex items-center gap-2">
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -62,7 +53,17 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="bg-blue-50">
-        <div className="text-xs">© {new Date().getFullYear()} Your Company</div>
+        <Button
+          variant="outline"
+          onClick={() => {
+            window.location.href = "/";
+          }}
+        >
+          Log Out
+        </Button>
+        <div className="text-xs text-center mb-5">
+          © {new Date().getFullYear()} Your Company
+        </div>
       </SidebarFooter>
     </Sidebar>
   );

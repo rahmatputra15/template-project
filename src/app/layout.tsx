@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/ui/appsidebar";
-import Navbar from "@/components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "My Template Project",
@@ -16,15 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <SidebarProvider>
-          <AppSidebar />
-          <main>
-            <Navbar />
-            {children}
-          </main>
-        </SidebarProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

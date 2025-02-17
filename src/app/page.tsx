@@ -14,7 +14,7 @@ export default function LoginPage() {
     <div className="m-6">
       <Card className="w-full">
         <CardHeader>
-          <CardTitle>Card Title</CardTitle>
+          <CardTitle>LOGIN FORM</CardTitle>
           <CardDescription>Card Description</CardDescription>
         </CardHeader>
         <CardContent>
